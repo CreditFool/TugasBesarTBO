@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 35%;
+  margin: auto;
+  background-color: chartreuse;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  height: 500px;
+  background-color: bisque;
+}
+
+#chat-area {
+  height: 90%;
+  overflow: auto;
+}
+
+.chat {
+  margin: 10px 20px;
+}
+
+.aku {
+  text-align: right;
+}
+
+.chat-bubble {
+  display: inline-block;
+  padding: 10px;
+}
+
+.aku > .chat-bubble {
+  background-color: greenyellow;
+  border-radius: 20px 0 20px 20px;
+}
+
+.dia > .chat-bubble {
+  background-color: white;
+  border-radius: 0 20px 20px 20px;
+}
+
+.message-bar {
+  text-align: center;
+  height: 10%;
+  background-color: chartreuse;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Chat App</title>
+</head>
+<body>
+    <div id="friendlist-side">
+        <header id="friendlist-header" class="header container">
+            <div class="user-profil">
+                <div class="profil-pic">
+                    U
+                </div>
+                <div class="profil-name">
+                    USER
+                </div>
+            </div>
+            </header>
+        <main id="friendlist" class="container">
+            <div class="user-profil underline">
+                <div class="profil-pic">
+                    C
+                </div>
+                <div class="profil-name">
+                    CHATBOT
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="chat-side">
+        <header id="chat-header" class="header container">
+            <div class="user-profil">
+                <div class="profil-pic">
+                    C
+                </div>
+                <div class="profil-name">
+                    CHATBOT
+                </div>
+            </div>
+        </header>
+        <main id="chat-area">
+            <div id="chat-log">
+                <div class="chat dia">
+                    <div class="chat-bubble">
+                        Selamat datang, ini adalah demo tugas besar kelompok 1 <br />
+                        Untuk memulai silahkan ketik <b>keyword</b> kemudian enter
+                    </div>
+                </div>
+                <div class="chat dia">
+                    <div class="chat-bubble">
+                        Versi program saat ini mungkin akan berbeda dengan hasil akhir
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div id="input-bar" class="container">
+            <input type="text" placeholder="Masukkan pesan kemudian tekan enter" name="chat" id="chat-input">
+            <div class="button-wrap">
+                <button id="send-button">SEND</button>
+            </div>
+        </div>
+    </div>
+    <script src="src/script/chatbot.js"></script>
+</body>
+</html>

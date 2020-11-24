@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: #2a2f32;
+}
+
+.container {
+  padding: 0 20px;
+}
+
+.user-profil {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.profil-pic {
+  padding: 11px 0;
+  margin-right: 20px;
+  width: 40px;
+  float: left;
+  border-radius: 100%;
+  display: inline-block;
+  text-align: center;
+  background-color: white;
+}
+
+.profil-name {
+  float: right;
+  color: whitesmoke;
+}
+
+.underline {
+  padding-bottom: 10px;
+  margin-top: 20px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+#friendlist-side {
+  width: 30%;
+  height: 100vh;
+  border-right: 1px solid ghostwhite;
+  background-color: #131c21;
+  float: left;
+}
+
+#chat-side {
+  position: relative;
+  width: 70%;
+  height: 100vh;
+  background-color: grey;
+  float: right;
+}
+
+#chat-area {
+  padding: 20px 50px;
+  height: 78%;
+  overflow: auto;
+}
+
+.chat {
+  margin: 10px 20px;
+}
+
+.aku {
+  text-align: right;
+}
+
+.chat-bubble {
+  display: inline-block;
+  padding: 10px;
+}
+
+.aku > .chat-bubble {
+  background-color: greenyellow;
+  border-radius: 20px 0 20px 20px;
+}
+
+.dia > .chat-bubble {
+  background-color: white;
+  border-radius: 0 20px 20px 20px;
+}
+
+#input-bar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background-color: #2a2f32;
+}
+
+#chat-input {
+  padding: 10px 20px;
+  width: 60%;
+  font-size: medium;
+  background-color: ghostwhite;
+  border: none;
+  border-radius: 20px;
+}
+
+.button-wrap {
+  padding-left: 20px;
+}
+
+#send-button {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: yellow;
+}
