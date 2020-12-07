@@ -4,18 +4,6 @@
 
 //------------------------------------------------
 
-let state = 'awal';
-
-
-//async function fetchData() {
-//        try {
-//            const response = await fetch(`https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-capital-city.json`);
-//            const data = await response.json();
-//            return data;
-//        } catch (error) {
-//            console.error(error);
-//        }
-//    }
 
 let kota;
 
@@ -29,39 +17,23 @@ function getKota(negara) {
     const list = kota;
     let hasil;
     
-    for (let i=0; i<list.length; i++) {
-        if (list[i].country == negara) {
+    let i;
+    for (i=0; i<list.length; i++) {
+        if (list[i].country.toLowerCase() == negara.toLowerCase()) {
             hasil = list[i].city;
             break;
         }
     }
+    if (i>=list.length) {
+        hasil = "Hasil tidak ditemukan";
+    }
     
+    console.log("getKota jalan");
+    console.log(negara);
+    console.log(hasil);
     return hasil;
-//    console.log(hasil);
-//    return hasil;
-}
 
-//function getIbuKota(negara = "Indonesia") {
-//    
-//    let hasil;
-//    
-//    fetch('https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-capital-city.json')
-//    // Handle success
-//        .then(response => response.json())  // convert to json
-//        .then(json => {
-//            if (json.error) {
-//                console.log('error');
-//            }
-//            else {
-////                addChat('dia', ambil(json, negara));
-//                let yay = ambil(json, negara);
-//                console.log(yay);
-//            }
-//        })
-//        .catch(err => console.log('Request Failed', err)); // Catch errors
-//    
-//    return hasil;
-//}
+}
 
 function resetChatValue() {
     document.getElementById("chat-input").value = "";
@@ -75,22 +47,50 @@ function getRandomNumber(num) {
     return Math.floor((Math.random() * num));
 }
 
+var state = 'awal';
+function ubahState(state_baru, kata="baik") {
+//    state = state_baru;
+    try {
+        return kata;    
+    } finally {
+        state = state_baru;
+    }
+    
+}
 
+function test(arguent) {
+    console.log(arguent);
+    return arguent;
+}
+
+function jalankanFungsi(syarat, func, args = []) {
+    if (syarat) {
+        console.log(func.apply(this, args));
+        return func.apply(this, args);
+    }
+}
 
 function getResponse(chatText) {
     const resp = {
         "awal" : {
             "keyword": [ 
-//            "bababoy"
-                getKota("Indonesia")
+                `
+                state: awal <br>
+                - keyword <br>
+                - kelompok <br>
+                - judul <br>
+                - test <br>
+                - halo <br>
+                - cari ibu kota <br>
+                `
             ],
             "kelompok": [
-            `
-            Kelompok 1 <br /><br />
-            Ashril Argadeda Mahendra (190535646066)<br />
-            Ichlalsul Bulqiah (190535646047)<br />
-            Mawaddah Awaliyah (190535646089)<br />
-            `
+                `
+                Kelompok 1 <br /><br />
+                Ashril Argadeda Mahendra (190535646066)<br />
+                Ichlalsul Bulqiah (190535646047)<br />
+                Mawaddah Awaliyah (190535646089)<br />
+                `
             ],
             "judul": [
                 "Implementasi finite state automata pada pembuatan chatbot"
@@ -105,43 +105,55 @@ function getResponse(chatText) {
                 "halo juga",
                 "yahoo"
             ],
+            
+            "cari ibu kota": [
+//                "cari negara"
+                jalankanFungsi(((state == "awal") && (chatText == "cari ibu kota")), ubahState, ["cari negara", "state menjadi cari negara"])
+            ],
+            
             "else": [
                 "silahkan ketik 'keyword' kemudian tekan enter"         
             ]
         },
         
-        "cari_negara" : {
-            "petunuk" : [
-                
+        "cari negara" : {
+            "keyword" : [
+                 `
+                state: cari negara <br>
+                - keyword <br>
+                - kembali <br>
+                - nama negara dalam bahasa inggris <br>
+                `
             ],
             
-            "selesai" : [
-                
+            "kembali" : [
+//                "selesai"
+                jalankanFungsi(((state == "cari negara") && (chatText == "kembali")), ubahState, ["awal", "state menjadi awal"])
             ],
             
             "else" : [
-                getKota(chatText)
+                jalankanFungsi((state == "cari negara"), getKota, [chatText])
             ]
         }
         
     }
     
 //    console.log(resp[state][chatText][0]);
-    console.log(resp["cari_negara"]["else"][0]);
-    addChat("dia", resp["cari_negara"]["else"][0]);
+//    console.log(resp["cari_negara"]["else"][0]);
+//    addChat("dia", resp["cari_negara"]["else"][0]);
     
     
-//    chatText = chatText.toLowerCase();
-//    if (chatText in resp) {
-//        const rand = getRandomNumber(resp[chatText].length);
-//        console.log(rand);
-//        return resp[chatText][rand];
-//    }
-//    else {
-//        const rand = getRandomNumber(resp["else"].length);
-//        console.log(rand);
-//        return resp["else"][rand];
-//    }
+    chatText = chatText.toLowerCase();
+    console.log(chatText in resp[state]);
+    if (chatText in resp[state]) {
+        const rand = getRandomNumber(resp[state][chatText].length);
+        return resp[state][chatText][rand];
+    }
+    else {
+        const rand = getRandomNumber(resp[state]["else"].length);
+        console.log("else dapat");
+        return resp[state]["else"][rand];
+    }
 }
 
 function addChat(sender, chatText) {
@@ -163,7 +175,7 @@ const sendButton = document.getElementById("send-button");
 sendButton.addEventListener("click", function(event){
     if (!(getChatValue() == false)) {
         addChat("aku", getChatValue());
-         addChat("dia", getResponse(getChatValue()));
+        addChat("dia", getResponse(getChatValue()));
         
         resetChatValue();
         updateScroll();

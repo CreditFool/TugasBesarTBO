@@ -19,6 +19,7 @@
             </div>
             </header>
         <main id="friendlist" class="container">
+<!--
             <div class="user-profil underline">
                 <div class="profil-pic">
                     C
@@ -26,6 +27,22 @@
                 <div class="profil-name">
                     CHATBOT
                 </div>
+            </div>
+-->
+            <div class="catatan">
+                <h2>Note</h2>
+                <p>ketik "keyword" untuk melihat menu di setiap state</p>
+                <p>Terdapat 2 state, "awal" dan "cari negara"</p>
+                <p>Untuk masuk ke fitur pencarian nama ibu kota, silahkan ketik "<b>cari ibu kota</b>" pada state awal</p>
+                <p>Nama negara yang dicari harus menggunakan bahasa inggris, contoh: Amerika Serikat ditulis United States</p>
+                <p>Besar kecil huruf tidak berpengaruh</p>
+                
+                <hr>
+                
+                <h2>Known Bugs</h2>
+                <p>- Ketika pergantian state, dialog "else" muncul</p>
+                <p>- Ketika berada di state "cari negara", fungsi getKota() selalu terpanggil</p>
+                <p>- Ketika menggunakan keyword "Cari ibu kota", tulisan "tidak ditemukan" akan muncul namun pencarian ibu kota tetap telah bisa dilakukan</p>
             </div>
         </main>
     </div>
@@ -38,6 +55,7 @@
                 <div class="profil-name">
                     CHATBOT
                 </div>
+                
             </div>
         </header>
         <main id="chat-area">
@@ -45,12 +63,20 @@
                 <div class="chat dia">
                     <div class="chat-bubble">
                         Selamat datang, ini adalah demo tugas besar kelompok 1 <br />
-                        Untuk memulai silahkan ketik <b>keyword</b> kemudian enter
+                        Untuk memulai silahkan ketik <b>cari ibu kota</b> untuk <br />
+                        mencari ibu kota suatu negara <br />
+                        (nama negara ditulis dalam bahasa inggris)
                     </div>
                 </div>
                 <div class="chat dia">
                     <div class="chat-bubble">
-                        Versi program saat ini mungkin akan berbeda dengan hasil akhir
+                        state: awal <br>
+                        - keyword <br>
+                        - kelompok <br>
+                        - judul <br>
+                        - test <br>
+                        - halo <br>
+                        - cari ibu kota <br>
                     </div>
                 </div>
             </div>

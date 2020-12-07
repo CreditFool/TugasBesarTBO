@@ -115,6 +115,23 @@
 
 #send-button {
   padding: 10px;
-  border-radius: 20px;
-  background-color: yellow;
+  border-radius: 5px;
+  background-color: gray;
+}
+
+.catatan {
+    padding: 40px 0;
+    color: whitesmoke;
+}
+
+.catatan h2 {
+    margin-top: 20px;
+}
+
+.catatan h2:first-child {
+    margin-top: 0;
+}
+
+.catatan p {
+    margin: 10px 0;
 }
