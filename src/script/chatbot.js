@@ -175,7 +175,7 @@ const sendButton = document.getElementById("send-button");
 sendButton.addEventListener("click", function(event){
     if (!(getChatValue() == false)) {
         addChat("aku", getChatValue());
-        addChat("dia", getResponse(getChatValue()));
+        addChat("dia", getResponse(getChatValue().toLocaleLowerCase()));
         
         resetChatValue();
         updateScroll();

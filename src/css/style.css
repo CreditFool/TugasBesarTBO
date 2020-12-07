@@ -50,6 +50,7 @@
   border-right: 1px solid ghostwhite;
   background-color: #131c21;
   float: left;
+  overflow: auto;
 }
 
 #chat-side {
@@ -122,6 +123,7 @@
 .catatan {
     padding: 40px 0;
     color: whitesmoke;
+    
 }
 
 .catatan h2 {
@@ -134,4 +136,18 @@
 
 .catatan p {
     margin: 10px 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    #friendlist-side {
+        display: none;
+    }
+    
+    #chat-side {
+        width: 100%;
+    }
+    
+    #chat-area {
+        padding: 20px 0;
+    }
 }
