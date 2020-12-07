@@ -1,3 +1,5 @@
+Untuk mengakses aplikasi, silahkan menuju https://creditfool.github.io/
+
 Kelompok 1
 
 Ashril Argadeda Mahendra (190535646066) 
